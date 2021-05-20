@@ -19,12 +19,28 @@ public class main {
         System.out.println(getCheckings(conn,uid));
         deposit(conn, uid);
         System.out.println(getCheckings(conn, uid));
-        createUser(conn);
-        uid = login(conn);
         deposit(conn, uid);
         System.out.println(getCheckings(conn, uid));
+        transfer(conn, uid);
         conn.close();
         
+    }
+
+    public static void transfer(Connection conn, int senderUID) throws SQLException {
+        Scanner scanner = new Scanner (System.in);
+        System.out.println("What is the username of who you would like to send money to?");
+        String reciever = scanner.nextLine();
+        System.out.println("Amount?");
+        int amount = scanner.nextInt();
+        scanner.next();
+        System.out.println("Note: ");
+        String memo = scanner.nextLine();
+        int recieverUID = getUID(conn, reciever);
+        Statement statement = conn.createStatement();
+        statement.executeUpdate("UPDATE account SET checkings = " + (getCheckings(conn, senderUID) - amount) + " WHERE uid = '" + senderUID + "'" );
+        statement.executeUpdate("UPDATE account SET checkings = " + (getCheckings(conn, recieverUID) + amount) + " WHERE uid = '" + recieverUID + "'" );
+        statement.execute("INSERT INTO transfer (sender, reciever, amount, memo) VALUES (" + senderUID + ", " + recieverUID + ", " + amount + ", '" + memo +"')");
+
     }
 
     public static void createUser(Connection conn) throws SQLException {
