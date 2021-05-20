@@ -2,7 +2,7 @@
 /shelf/
 /workspace.xml
 # Datasource local storage ignored files
-/../../../../../:\Pyramid\Projects\ATMInterface\.idea/dataSources/
+/../../../../../:\Pyramid\Projects\MySQLTest\.idea/dataSources/
 /dataSources.local.xml
 # Zeppelin ignored files
 /ZeppelinRemoteNotebooks/

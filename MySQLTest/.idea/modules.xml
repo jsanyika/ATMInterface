@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ATMInterface.iml" filepath="$PROJECT_DIR$/ATMInterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MySQLTest.iml" filepath="$PROJECT_DIR$/MySQLTest.iml" />
     </modules>
   </component>
 </project>
