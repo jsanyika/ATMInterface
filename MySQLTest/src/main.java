@@ -32,7 +32,7 @@ public class main {
         String reciever = scanner.nextLine();
         System.out.println("Amount?");
         int amount = scanner.nextInt();
-        scanner.next();
+        scanner.nextLine();
         System.out.println("Note: ");
         String memo = scanner.nextLine();
         int recieverUID = getUID(conn, reciever);
